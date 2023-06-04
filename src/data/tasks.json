@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "date": "2023-05-25",
+    "priority": "low",
+    "title": "Go to the supermarket",
+    "description": "Chicken, fruit, salad and beer",
+    "done": true
+  },
+  {
+    "id": 2,
+    "date": "2023-05-29",
+    "priority": "high",
+    "title": "Bike repair",
+    "description": "",
+    "done": false
+  },
+  {
+    "id": 3,
+    "date": "2023-06-02",
+    "priority": "medium",
+    "title": "Call Lucia",
+    "description": "Project meeting",
+    "done": false
+  },
+  {
+    "id": 4,
+    "date": "2023-06-02",
+    "priority": "low",
+    "title": "Pick up suit from dry cleaner",
+    "description": "18 Sastre Street (only afternoons)",
+    "done": false
+  },
+  {
+    "id": 5,
+    "date": "2023-06-03",
+    "priority": "low",
+    "title": "Angus' birthday",
+    "description": "",
+    "done": false
+  }
+]

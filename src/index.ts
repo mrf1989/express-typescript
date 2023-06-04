@@ -1,15 +1,19 @@
-import express from 'express';
+import express from 'express'
 
-const app = express();
-app.use(express.json());
+import taskRouter from './routes/tasks'
 
-const PORT = 3000;
+const app = express()
+app.use(express.json())
 
-app.get("/ping", (req, res) => {
-  console.log(`[${new Date().toLocaleDateString()} - ${req.method} ${req.path}]: Requesting ping`);
-  res.send("pong");
-});
+const PORT = 3000
+
+app.get('/ping', (req, res) => {
+  console.log(`[${new Date().toLocaleDateString()} - ${req.method} ${req.path}]: Requesting ping`)
+  res.send('pong')
+})
+
+app.use('/api/v1/tasks', taskRouter)
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+  console.log(`Server running on port ${PORT}`)
+})
