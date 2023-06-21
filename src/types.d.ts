@@ -1,5 +1,3 @@
-export type Priority = 'low' | 'medium' | 'high'
-
 export interface Task {
   id: number
   date: string
@@ -10,3 +8,5 @@ export interface Task {
 }
 
 export type NoDateTask = Omit<Task, 'date'>
+
+export type NewTask = Omit<Task, 'id' | 'date' | 'done'>
