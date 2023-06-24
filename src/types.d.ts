@@ -7,6 +7,6 @@ export interface Task {
   done: boolean
 }
 
-export type NoDateTask = Omit<Task, 'date'>
+export type NoDateTask = Omit<Task, "date">
 
-export type NewTask = Omit<Task, 'id' | 'date' | 'done'>
+export type NewTask = Omit<Task, "id" | "date" | "done">
