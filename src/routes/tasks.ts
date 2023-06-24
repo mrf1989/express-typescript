@@ -1,31 +1,31 @@
-import express from 'express'
-import * as taskServices from '../services/tasks'
-import toNewTask from '../utils/utils'
+import express from "express";
+import * as taskServices from "../services/tasks";
+import toNewTask from "../utils/utils";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', (_, res) => {
-  res.send(taskServices.getTasks())
-})
+router.get("/", (_, res) => {
+  res.send(taskServices.getTasks());
+});
 
-router.get('/:id', (req, res) => {
-  const task = taskServices.findById(+req.params.id)
+router.get("/:id", (req, res) => {
+  const task = taskServices.findById(+req.params.id);
 
   return (task !== null)
     ? res.send(task)
-    : res.sendStatus(404)
-})
+    : res.sendStatus(404);
+});
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   try {
-    const newTask = toNewTask(req.body)
+    const newTask = toNewTask(req.body);
 
-    const addedTask = taskServices.addTask(newTask)
+    const addedTask = taskServices.addTask(newTask);
 
-    res.json(addedTask)
+    res.json(addedTask);
   } catch (e: any) {
-    res.status(400).send(e.message)
+    res.status(400).send(e.message);
   }
-})
+});
 
-export default router
+export default router;

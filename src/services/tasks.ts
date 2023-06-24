@@ -1,18 +1,19 @@
-import { Task, NoDateTask, NewTask } from '../types'
-import tasksData from '../data/tasks.json'
+import { Task, NoDateTask, NewTask } from "../types";
+import tasksData from "../data/tasks.json";
 
-const tasks: Task[] = tasksData as Task[]
+const tasks: Task[] = tasksData as Task[];
 
-export const getTasks = (): Task[] => tasks
+export const getTasks = (): Task[] => tasks;
 
 export const findById = (id: number): NoDateTask | undefined => {
-  const task = tasks.find(task => task.id === id)
+  const task = tasks.find(task => task.id === id);
   if (task != null) {
-    const { date, ...restOfTask } = task
-    return restOfTask
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { date, ...restOfTask } = task;
+    return restOfTask;
   }
-  return undefined
-}
+  return undefined;
+};
 
 export const getTasksWithoutDate = (): NoDateTask[] => {
   return tasks.map(({ id, priority, title, description, done }) => {
@@ -22,9 +23,9 @@ export const getTasksWithoutDate = (): NoDateTask[] => {
       title,
       description,
       done
-    }
-  })
-}
+    };
+  });
+};
 
 export const addTask = (task: NewTask): Task => {
   const newTask = {
@@ -32,7 +33,7 @@ export const addTask = (task: NewTask): Task => {
     ...task,
     date: new Date().toISOString(),
     done: false
-  }
-  tasks.push(newTask)
-  return newTask
-}
+  };
+  tasks.push(newTask);
+  return newTask;
+};
